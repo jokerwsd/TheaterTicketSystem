@@ -1,8 +1,7 @@
 #ifndef _TBASE_H
 #define _TBASE_H
 
-#include "Seat.h"
-#include "Post.h"
+#include "Locat.h"
 #include "Ticket.h"
 
 class TheaterBase
@@ -14,7 +13,11 @@ class TheaterBase
 		int Od_p;
 		int Ev_p;
 
-		Locat **map;
+		int price;
+
+		char *name;
+
+		Locat **_map;
 
 		Seat seat;
 		Post post;
@@ -23,7 +26,7 @@ class TheaterBase
 	public:
 		TheaterBase TheaterBase(int Row,int Col,int Od_p,int Ev_p);
 		Locat findSeat(int p_num, int start);
-		Ticket sellTicket(int p_num);
+		Ticket sellTicket(int p_num, int price, char *name);
 };
 
 #endif

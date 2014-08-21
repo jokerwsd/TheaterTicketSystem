@@ -2,14 +2,14 @@
 #define _LOCAT_H
 
 class Locat
-{
-	private:
+{		
+	public:
 		int row;
 		int col;
-		bool flag;
+		bool flag;//false means there is a post not a seat
 
-	public:
-		bool findSeat(int row, int col);
-
+		Locat::Locat(int row,int col,bool flag);// This function could return 
+		//either in the location is seat or post
 };
 
+#endif
