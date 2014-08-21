@@ -6,7 +6,10 @@
 
 using namespace std;
 
-Ticket::Ticket(int price, char *name, Locat seat)
+Ticket::Ticket()
+{}
+
+Ticket::Ticket(int price, char *name,const Locat &seat)
 {
 	Price = price;
 	Name = name;
@@ -15,8 +18,8 @@ Ticket::Ticket(int price, char *name, Locat seat)
 
 void Ticket::printTicket()
 {
-	cout<<"##########-Ticket for "<<this->name<<"##########"<<endl;
-	cout<<"Price: "<<this->price<<endl;
+	cout<<"##########-Ticket for "<<this->Name<<"##########"<<endl;
+	cout<<"Price: "<<this->Price<<endl;
 
 	cout<<"Your Seat is Row "<<this->Seat.row<<" : Col "<<this->Seat.col<<endl;
 	cout<<"Enjoy your time!"<<endl;
@@ -24,8 +27,8 @@ void Ticket::printTicket()
 	ofstream ticket ("ticket.txt");
 	if(ticket.is_open())
 	{
-		ticket << "##########-Ticket for "<<this->name<<"##########\n";
-		ticket << "Price: "<<this->price<<"\n";
+		ticket << "##########-Ticket for "<<this->Name<<"##########\n";
+		ticket << "Price: "<<this->Price<<"\n";
 		ticket << "Your Seat is Row "<<this->Seat.row<<" : Col "<<this->Seat.col<<"\n";
 		ticket << "Enjoy your time!\n";
 	}

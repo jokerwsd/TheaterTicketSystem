@@ -1,8 +1,13 @@
 #include "Locat.h"
 
-Locat::Locat(int row,int col,bool flag)
+Locat::Locat()
 {
-	this.row = row;
-	this.col = col;
-	this.flag = flag;
+
+}
+
+Locat::Locat(int Row,int Col,bool Flag)
+{
+	this->row = Row;
+	this->col = Col;
+	this->flag = Flag;
 }

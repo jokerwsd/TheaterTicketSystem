@@ -13,7 +13,8 @@ class Ticket
 
 
 	public:
-		Ticket Ticket(int price, char *name, Locat seat);
+		Ticket();
+		Ticket(int price, char *name,const Locat& seat);
 		void printTicket();
 		
 };

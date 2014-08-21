@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "TheaterBase"
+#include "TheaterBase.h"
 #include "locat.h"
 #include "Ticket.h"
 
@@ -59,14 +59,14 @@ The seat map may look like this when od_p = 2, ev_p = 3:
 					}
 				}
 			}
-		}		
+				
 	}
 }
 
 Locat TheaterBase::findSeat(int n, int curr)
 {
 
-	if(n == 0) return;
+	if(n == 0) return _map[curr][0];
 
 	if(n%Od_p == 0)//in order to find best matching seat
 	{
@@ -79,8 +79,8 @@ Locat TheaterBase::findSeat(int n, int curr)
 					int count = 0;
 					while(count < Od_p)
 					{
-						_map[curr][i+count].flag == false;
-						Ticket ticket(price,*name,_map[curr][i]);
+						_map[curr][i+count].flag = false;
+						Ticket ticket(price,name,_map[curr][i]);
 						ticket.printTicket();
 					}
 					n = n - Od_p;
@@ -104,8 +104,8 @@ Locat TheaterBase::findSeat(int n, int curr)
 					int count = 0;
 					while(count < Ev_p)
 					{
-						_map[curr][i+count].flag == false;
-						Ticket ticket(price,*name,_map[curr][i]);
+						_map[curr][i+count].flag = false;
+						Ticket ticket(price,name,_map[curr][i]);
 						ticket.printTicket();
 					}
 					n = n - Ev_p;
@@ -119,12 +119,12 @@ Locat TheaterBase::findSeat(int n, int curr)
 		curr = curr + 1;
 	}
 
-	for(int i=1;i<col;i++)
+	for(int i=1;i<Col;i++)
 	{
 		if(_map[curr][i].flag == true)
 		{
-			_map[curr][i].flag == false;
-			Ticket ticket(price,*name,_map[curr][i]);
+			_map[curr][i].flag = false;
+			Ticket ticket(price,name,_map[curr][i]);
 			ticket.printTicket();
 		}
 		n--;
@@ -138,7 +138,7 @@ Ticket TheaterBase::sellTicket(int p_num, int price, char *name)
 {
 		this->price = price;
 		this->name = name;
-		this.findSeat(p_num,1);
+		this->findSeat(p_num,1);
 }
 
 
