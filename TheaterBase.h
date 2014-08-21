@@ -19,8 +19,6 @@ class TheaterBase
 
 		Locat **_map;
 
-		Seat seat;
-		Post post;
 		Ticket ticket;
 
 	public:

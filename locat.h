@@ -8,7 +8,7 @@ class Locat
 		int col;
 		bool flag;//false means there is a post not a seat
 
-		Locat::Locat(int row,int col,bool flag);// This function could return 
+		Locat Locat(int row,int col,bool flag);// This function could return 
 		//either in the location is seat or post
 };
 
